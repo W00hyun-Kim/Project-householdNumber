@@ -1,114 +1,132 @@
 package householdsNumber;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class PrintCity {
 
 	public static void printCity() {
 		Parsing parsing = new Parsing();
-
-		if (parsing.inputCity.equals("강원도")) {
-			Iterator<String> it = parsing.gangwon.iterator();
-			while (it.hasNext()) {
-				System.out.println("강원도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("경기도")) {
-			Iterator<String> it = parsing.gyeonggi.iterator();
-			while (it.hasNext()) {
-				System.out.println("경기도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("경상남도")) {
-			Iterator<String> it = parsing.gyeongnam.iterator();
-			while (it.hasNext()) {
-				System.out.println("경상남도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("경상북도")) {
-			Iterator<String> it = parsing.gyeongbuk.iterator();
-			while (it.hasNext()) {
-				System.out.println("경상북도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("광주광역시")) {
-			Iterator<String> it = parsing.gwangju.iterator();
-			while (it.hasNext()) {
-				System.out.println("광주광역시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("대구광역시")) {
-			Iterator<String> it = parsing.daegu.iterator();
-			while (it.hasNext()) {
-				System.out.println("대구광역시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("대전광역시")) {
-			Iterator<String> it = parsing.daejeon.iterator();
-			while (it.hasNext()) {
-				System.out.println("대전광역시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("부산광역시")) {
-			Iterator<String> it = parsing.busan.iterator();
-			while (it.hasNext()) {
-				System.out.println("부산광역시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("서울특별시")) {
-			Iterator<String> it = parsing.seoul.iterator();
-			while (it.hasNext()) {
-				System.out.println("서울특별시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("세종특별자치시")) {
-			Iterator<String> it = parsing.sejong.iterator();
-			while (it.hasNext()) {
-				System.out.println("세종특별자치시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("울산광역시")) {
-			Iterator<String> it = parsing.ulsan.iterator();
-			while (it.hasNext()) {
-				System.out.println("울산광역시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("인천광역시")) {
-			Iterator<String> it = parsing.incheon.iterator();
-			while (it.hasNext()) {
-				System.out.println("인천광역시 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("전라남도")) {
-			Iterator<String> it = parsing.jeonnam.iterator();
-			while (it.hasNext()) {
-				System.out.println("전라남도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("전라북도")) {
-			Iterator<String> it = parsing.jeonbuk.iterator();
-			while (it.hasNext()) {
-				System.out.println("전라북도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("제주특별자치도")) {
-			Iterator<String> it = parsing.jeju.iterator();
-			while (it.hasNext()) {
-				System.out.println("제주특별자치도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("충청남도")) {
-			Iterator<String> it = parsing.chungnam.iterator();
-			while (it.hasNext()) {
-				System.out.println("충청남도 " + it.next());
-			}
-		}
-		if (parsing.inputCity.equals("충청북도")) {
-			Iterator<String> it = parsing.chungbuk.iterator();
-			while (it.hasNext()) {
-				System.out.println("충청북도 " + it.next());
-			}
-		}
+			// converting HashSet to arraylist
+        	ArrayList<String> gangwon = new ArrayList<>(parsing.gangwon);
+			Collections.sort(gangwon);
+			System.out.println("[강원도]");
+			for (int i = 0; i < gangwon.size(); i++) {
+				System.out.println(gangwon.get(i)); 
+			} System.out.println();
+		
+			ArrayList<String> gyeonggi = new ArrayList<>(parsing.gyeonggi);
+			Collections.sort(gyeonggi);
+			System.out.println("[경기도]");
+			for (int i = 0; i < gyeonggi.size(); i++) {
+				System.out.println(gyeonggi.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> gyeongnam = new ArrayList<>(parsing.gyeongnam);
+			Collections.sort(gyeongnam);
+			System.out.println("[경상남도]");
+			for (int i = 0; i < gyeongnam.size(); i++) {
+				System.out.println(gyeongnam.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> gyeongbuk = new ArrayList<>(parsing.gyeongbuk);
+			Collections.sort(gyeongbuk);
+			System.out.println("[경상북도]");
+			for (int i = 0; i < gyeongbuk.size(); i++) {
+				System.out.println(gyeongbuk.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> gwangju = new ArrayList<>(parsing.gwangju);
+			Collections.sort(gwangju);
+			System.out.println("[광주광역시]");
+			for (int i = 0; i < gwangju.size(); i++) {
+				System.out.println(gwangju.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> daegu = new ArrayList<>(parsing.daegu);
+			Collections.sort(daegu);
+			System.out.println("[대구광역시]");
+			for (int i = 0; i < daegu.size(); i++) {
+				System.out.println(daegu.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> daejeon = new ArrayList<>(parsing.daejeon);
+			Collections.sort(daejeon);
+			System.out.println("[대전광역시]");
+			for (int i = 0; i < daejeon.size(); i++) {
+				System.out.println(daejeon.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> busan = new ArrayList<>(parsing.busan);
+			Collections.sort(busan);
+			System.out.println("[부산광역시]");
+			for (int i = 0; i < busan.size(); i++) {
+				System.out.println(busan.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> seoul = new ArrayList<>(parsing.seoul);
+			Collections.sort(seoul);
+			System.out.println("[서울특별시]");
+			for (int i = 0; i < seoul.size(); i++) {
+				System.out.println(seoul.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> sejong = new ArrayList<>(parsing.sejong);
+			Collections.sort(sejong);
+			System.out.println("[세종특별자치시]");
+			for (int i = 0; i < sejong.size(); i++) {
+				System.out.println(sejong.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> ulsan = new ArrayList<>(parsing.ulsan);
+			Collections.sort(ulsan);
+			System.out.println("[울산광역시]");
+			for (int i = 0; i < ulsan.size(); i++) {
+				System.out.println(ulsan.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> incheon = new ArrayList<>(parsing.incheon);
+			Collections.sort(incheon);
+			System.out.println("[인천광역시]");
+			for (int i = 0; i < incheon.size(); i++) {
+				System.out.println(incheon.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> jeonnam = new ArrayList<>(parsing.jeonnam);
+			Collections.sort(jeonnam);
+			System.out.println("[전라남도]");
+			for (int i = 0; i < jeonnam.size(); i++) {
+				System.out.println(jeonnam.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> jeonbuk = new ArrayList<>(parsing.jeonbuk);
+			Collections.sort(incheon);
+			System.out.println("[전라북도]");
+			for (int i = 0; i < jeonbuk.size(); i++) {
+				System.out.println(jeonbuk.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> jeju = new ArrayList<>(parsing.jeju);
+			Collections.sort(jeju);
+			System.out.println("[제주특별자치도]");
+			for (int i = 0; i < jeju.size(); i++) {
+				System.out.println(jeju.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> chungnam = new ArrayList<>(parsing.chungnam);
+			Collections.sort(chungnam);
+			System.out.println("[충청남도]");
+			for (int i = 0; i < chungnam.size(); i++) {
+				System.out.println(chungnam.get(i)); 
+			} System.out.println();
+			
+			ArrayList<String> chungbuk = new ArrayList<>(parsing.chungbuk);
+			Collections.sort(chungbuk);
+			System.out.println("[충청북도]");
+			for (int i = 0; i < chungbuk.size(); i++) {
+				System.out.println(chungbuk.get(i)); 
+			} System.out.println();
 
 	}
 }
