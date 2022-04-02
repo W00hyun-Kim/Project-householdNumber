@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
  
 public class Parsing {
-	public static HashSet<String> gangwon = new HashSet<String>();
+	public static  HashSet<String> gangwon = new HashSet<String>();
 	public static HashSet<String> gyeonggi = new HashSet<String>();
 	public static HashSet<String> gyeongnam = new HashSet<String>();
 	public static HashSet<String> gyeongbuk = new HashSet<String>();
@@ -26,6 +26,7 @@ public class Parsing {
 //	public void parsing() {
 	public static void main(String[] args) {
 		PrintCity printcity = new PrintCity();
+		CsvFileWriter fw = new CsvFileWriter();
 		
 		final String fileName = "C:\\Users\\whKim\\Desktop\\DataProcessing-Number of households\\한국행정구역분류_2022.4.1.기준.csv";
 		Scanner sc = new Scanner(System.in);
@@ -232,9 +233,11 @@ public class Parsing {
 			} //while
 
 			//print
-			printcity.printCity();
+//			printcity.printCity();
 			
-									
+			//save as csv file
+			fw.csv();
+			
 						
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
