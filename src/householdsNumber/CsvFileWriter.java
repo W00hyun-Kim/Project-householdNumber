@@ -11,6 +11,8 @@ public class CsvFileWriter {
 		 File csv = new File("C:\\Users\\whKim\\Desktop\\DataProcessing-Number of households\\Result.csv");
 	        BufferedWriter bw = null; 
 			try {
+				String category = "행정구역(시군구)별,2021.11,2021.12,2022.01,2022.02\n";	         
+				bw.write(category); 	
 				
 				bw = new BufferedWriter(new FileWriter(csv, true));
 				

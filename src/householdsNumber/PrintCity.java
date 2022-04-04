@@ -115,7 +115,7 @@ public class PrintCity {
 			} System.out.println();
 			
 			ArrayList<String> jeonbuk = new ArrayList<>(parsing.jeonbuk);
-			Collections.sort(incheon);
+			Collections.sort(jeonbuk);
 			System.out.println("[전라북도]");
 			for (int i = 0; i < jeonbuk.size(); i++) {
 				System.out.println(jeonbuk.get(i)); 

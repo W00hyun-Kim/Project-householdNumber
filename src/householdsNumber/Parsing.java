@@ -29,7 +29,7 @@ public class Parsing {
 		CsvFileWriter fw = new CsvFileWriter();
 		
 		final String fileName = "C:\\Users\\whKim\\Desktop\\DataProcessing-Number of households\\한국행정구역분류_2022.4.1.기준.csv";
-		Scanner sc = new Scanner(System.in);
+//		Scanner sc = new Scanner(System.in);
 //		System.out.println("시/도를 입력하세요.");
 //		inputCity = sc.nextLine();
 		String tmp[] =new String[1];
@@ -53,13 +53,27 @@ public class Parsing {
 				} else if(str[2].equals("경기도")&&str[4].contains("구")) {
 					if(gyeonggi.contains(tmp[0]+" "+str[4])) {
 						continue;
+					}					
+					if(tmp[0].contains(str[4])) {	//ex) 구리시 --> "구" 포함되었기에 예외처리
+						gyeonggi.add(tmp[0]);
+					} else {
+						gyeonggi.add(tmp[0]+ " " + str[4]);
 					}
-					gyeonggi.add(tmp[0]+" "+str[4]);					
+					
+					if(gyeonggi.contains(tmp[0])) {
+						continue;
+					} else {
+						gyeonggi.add(tmp[0]);											
+					}					
+					gyeonggi.add(tmp[0]+" "+str[4]);	
+					
 				} else if(str[2].equals("경기도")&&str[4].contains("시")) {
 					if(gyeonggi.contains(str[2]+" "+str[4])) {
 						continue;
 					}
 					gyeonggi.add(str[2]+" "+str[4]);
+//					gyeonggi.add();
+				
 					
 				//경상남도	
 				} else if(str[2].equals("경상남도")&&str[4].contains("시")&&str[6].equals("")) {
@@ -67,6 +81,11 @@ public class Parsing {
 				} else if(str[2].equals("경상남도")&&str[4].contains("구")) {
 					if(gyeongnam.contains(tmp[0]+" "+str[4])) {
 						continue;
+					}
+					if(gyeongnam.contains(tmp[0])) {
+						continue;
+					} else {
+						gyeongnam.add(tmp[0]);											
 					}
 					gyeongnam.add(tmp[0]+" "+str[4]);					
 				} else if(str[2].equals("경상남도")&&str[4].contains("시")||str[2].equals("경상남도")&&str[4].contains("군")) {
@@ -83,16 +102,23 @@ public class Parsing {
 					if (gyeongbuk.contains(tmp[0] + " " + str[4]) || gyeongbuk.contains(tmp[0])) {
 						continue;
 					}
+
 					if (tmp[0].contains(str[4])) { // ex)구미시-->"구" 포함되었기에 예외처리
 						gyeongbuk.add(tmp[0]);
 					} else {
 						gyeongbuk.add(tmp[0] + " " + str[4]);						
-					}
+					}					
+					if(gyeongnam.contains(tmp[0])) {
+						continue;
+					} else {
+						gyeongnam.add(tmp[0]);											
+					}					
 				} else if(str[2].equals("경상북도")&&str[4].contains("시")||str[2].equals("경상북도")&&str[4].contains("군")) {
 					if(gyeongbuk.contains(str[2]+" "+str[4])) {
 						continue;
 					}
 					gyeongbuk.add(str[2]+" "+str[4]);
+					gyeongbuk.add("경상북도 포항시");
 					
 				//광주광역시	
 				} else if(str[2].equals("광주광역시")) {
@@ -171,7 +197,7 @@ public class Parsing {
 					if (jeonbuk.contains(tmp[0] + " " + str[4]) || jeonbuk.contains(tmp[0])) {
 						continue;
 					}
-					if (tmp[0].contains(str[4])) { // ex)구미시-->"구" 포함되었기에 예외처리
+					if (tmp[0].contains(str[4])) { 
 						jeonbuk.add(tmp[0]);
 					} else {
 						jeonbuk.add(tmp[0] + " " + str[4]);						
@@ -181,7 +207,6 @@ public class Parsing {
 						continue;
 					}
 					jeonbuk.add(str[2]+" "+str[4]);
-				
 				
 				//제주특별자치도
 				} else if (str[2].equals("제주특별자치도")) {
@@ -199,7 +224,7 @@ public class Parsing {
 					if (chungnam.contains(tmp[0] + " " + str[4]) || chungnam.contains(tmp[0])) {
 						continue;
 					}
-					if (tmp[0].contains(str[4])) { // ex)구미시-->"구" 포함되었기에 예외처리
+					if (tmp[0].contains(str[4])) { 
 						chungnam.add(tmp[0]);
 					} else {
 						chungnam.add(tmp[0] + " " + str[4]);						
@@ -231,7 +256,9 @@ public class Parsing {
 				}
 			
 			} //while
-
+			chungnam.add("충청남도 천안시");
+			chungbuk.add("충청북도 청주시");
+			jeonbuk.add("전라북도 전주시");
 			//print
 //			printcity.printCity();
 			
